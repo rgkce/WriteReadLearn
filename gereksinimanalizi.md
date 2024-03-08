@@ -18,7 +18,7 @@
 16. Şifre Değiştirme
 
 
-#Gereksinim Dağılımları
+# Gereksinim Dağılımları
 
 1. [Rümeysa Dilan Gökçe'nin Gereksinimleri]()
 2. [Suat Bilgay'ın Gereksinimleri]()
