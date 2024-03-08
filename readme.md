@@ -1,6 +1,6 @@
 # WRITE READ LEARN
 
-**Proje Tanımı:**WriteReadLearn isimli uygulamamız, üye olan kişilerin çeşitli konularda makale formatında yazılar yayınlamasına ve diğer kişilerin yayınladığı yazılarını okumasını sağlar. Çeşitli konu yelpazesi ile kişilerin konular hakkında bilgi edinebilmesi kolaylaşır.
+**Proje Tanımı:** WriteReadLearn isimli uygulamamız, üye olan kişilerin çeşitli konularda makale formatında yazılar yayınlamasına ve diğer kişilerin yayınladığı yazılarını okumasını sağlar. Çeşitli konu yelpazesi ile kişilerin konular hakkında bilgi edinebilmesi kolaylaşır.
 
 **Proje Kategorisi:** Blog Sosyal Medya
 
