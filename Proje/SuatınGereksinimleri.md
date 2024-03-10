@@ -1,4 +1,4 @@
-### Suat Bilgayın Gereksinimleri
+## Suat Bilgayın Gereksinimleri
 
 **1. üye olma :** kullanıcı adı ve şifre belirleyerek siteye üye olunabilir.
 
