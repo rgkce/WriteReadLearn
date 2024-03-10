@@ -12,7 +12,7 @@
 
 **Proje Ekibi:** Rümeysa Dilan Gökçe, Suat Bilgay
 
-1. [Proje Planı](ProjePlanı.md)
+1. [Proje Planı](Proje\ProjePlanı.jpg)
 2. [Gereksinim Analizi](gereksinimanalizi.md)
 3. Durum Diyagramı
 4. Durum Senaryoları
