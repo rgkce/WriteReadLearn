@@ -21,4 +21,4 @@
 # Gereksinim Dağılımları
 
 1. [Rümeysa Dilan Gökçe'nin Gereksinimleri](RümeysanınGereksinimleri.md)
-2. [Suat Bilgay'ın Gereksinimleri]()
+2. [Suat Bilgay'ın Gereksinimleri](Downloads\WriteReadLearn-master\WriteReadLearn-master\SuatınGereksinimleri.md)
