@@ -1,21 +1,21 @@
 # Gereksinimler
 
-1. Üye olma
-2. Giriş Yapma
-3. Yazı Ekle
-4. Yazı Güncelle
-5. Yazı Sil
-6. Yazı Favorileme
-7. Yazıyı Favorilerden Çıkarma
-8. Profil Arama
-9. Profil Görüntüleme
-10. Profil Favorileme
-11. Profili Favorilerden Çıkarma
-12. Favori Listeleme
-13. Profil Fotoğrafı Ekleme
-14. Profil Fotoğrafı Silme
-15. Profil Güncelleme
-16. Şifre Değiştirme
+1. Üye olma(suat)
+2. Giriş Yapma(rümeysa)
+3. Yazı Ekle(suat)
+4. Yazı Güncelle(rümeysa)
+5. Yazı Sil(suat)
+6. Yazı Favorileme(rümeysa)
+7. Yazıyı Favorilerden Çıkarma(suat)
+8. Profil Arama(rümeysa)
+9. Profil Görüntüleme(suat)
+10. Profil Favorileme(rümeysa)
+11. Profili Favorilerden Çıkarma(suat)
+12. Favori Listeleme(rümeysa)
+13. Profil Fotoğrafı Ekleme(suat)
+14. Profil Fotoğrafı Silme(rümeysa)
+15. Profil Güncelleme(suat)
+16. Şifre Değiştirme(rümeysa)
 
 
 # Gereksinim Dağılımları
