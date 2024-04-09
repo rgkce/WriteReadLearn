@@ -12,11 +12,11 @@
 
 **Proje Ekibi:** Rümeysa Dilan Gökçe, Suat Bilgay
 
-1. [Proje Planı](Proje\ProjePlanı.jpg)
-2. [Gereksinim Analizi](Proje\gereksinimanalizi.md)
-3. [Durum Diyagramı](Proje\UseCase.png)
-4. [Durum Senaryoları](Proje\Senaryolar.md)
-5. [Veritabanı Diyagramı](Proje\VeritabanıDiyagramı.png)
+1. [Proje Planı](ProjePlanı.jpg)
+2. [Gereksinim Analizi](gereksinimanalizi.md)
+3. [Durum Diyagramı](UseCase.png)
+4. [Durum Senaryoları](Senaryolar.md)
+5. [Veritabanı Diyagramı](VeritabanıDiyagramı.png)
 6. Front-End
 7. Back-end
 8. Test
