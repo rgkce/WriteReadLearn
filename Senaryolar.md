@@ -1,2 +1,2 @@
 1.[Rümeysanın Kullanım Senaryoları](RümeysaKullanımSenaryoları.pdf)
-2.[Suatın Kullanım Senaryoları]()
+2.[Suatın Kullanım Senaryoları](SuatınKullanımSenaryoları.pdf)
