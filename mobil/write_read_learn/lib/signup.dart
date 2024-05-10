@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:write_read_learn/blog_main_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -62,13 +63,18 @@ class _SignUpPageState extends State<SignUpPage> {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                   }
+                  Navigator.pushNamed(context, '/blog');
                 },
                 child: const Text('Sign Up'),
               ),
               const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BlogMainPage()),
+                  );
                 },
                 child: const Text('Already have an account? Sign In'),
               ),

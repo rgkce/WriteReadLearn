@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'signup.dart';
 
-class SignInSignUpPage extends StatefulWidget {
-  const SignInSignUpPage({super.key});
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _SignInSignUpPageState createState() => _SignInSignUpPageState();
+  _SignInState createState() => _SignInState();
 }
 
-class _SignInSignUpPageState extends State<SignInSignUpPage> {
+class _SignInState extends State<SignInPage> {
   final _formKey = GlobalKey<FormState>();
   // ignore: unused_field
   late String _email, _password;
@@ -54,6 +54,7 @@ class _SignInSignUpPageState extends State<SignInSignUpPage> {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                   }
+                  Navigator.pushNamed(context, '/blog');
                 },
                 child: const Text('Sign In'),
               ),
