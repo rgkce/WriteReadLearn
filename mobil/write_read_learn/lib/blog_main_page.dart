@@ -8,18 +8,20 @@ class BlogMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: _buildHeader()),
+      appBar: AppBar(
+        title: Text('WriteReadLearn Main Page'),
+      ),
       body: _buildBody(),
       bottomNavigationBar: _buildFooter(context),
     );
   }
 
   // Header
-  Widget _buildHeader() {
+  /*Widget _buildHeader() {
     return AppBar(
       title: const Text('WriteReadLearn Main Page'),
     );
-  }
+  }*/
 
   // Body
   Widget _buildBody() {
