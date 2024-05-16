@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'profile_page.dart';
+
 class PostsPage extends StatefulWidget {
   const PostsPage({super.key});
 
@@ -59,8 +61,30 @@ class _PostsPageState extends State<PostsPage> {
           );
         },
       ),
+      bottomNavigationBar: _buildFooter(context),
     );
   }
+}
+
+Widget _buildFooter(BuildContext context) {
+  return BottomAppBar(
+    color: Colors.white,
+    elevation: 8,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        IconButton(
+          icon: const Icon(Icons.person, color: Colors.blue),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProfilePage()),
+            );
+          },
+        ),
+      ],
+    ),
+  );
 }
 
 class Post {
