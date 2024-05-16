@@ -63,7 +63,7 @@ class _SignInState extends State<SignInPage> {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                   }
-                  Navigator.pushNamed(context, '/blog');
+                  Navigator.pushReplacementNamed(context, '/blog');
                 },
                 child: const Text('Sign In'),
               ),
