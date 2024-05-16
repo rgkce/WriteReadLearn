@@ -35,14 +35,14 @@ class ProfilePage extends StatelessWidget {
               'https://example.com/profile_picture.jpg',
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           // Name
           IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_border)),
           const Text(
             'John Doe',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           // Edit profile button
           ElevatedButton(
             onPressed: () {
@@ -62,7 +62,7 @@ class ProfilePage extends StatelessWidget {
             ),
             child: const Text('Edit Profile'),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           // Favorite posts
           const Text(
             'Favorite Posts',
@@ -83,7 +83,7 @@ class ProfilePage extends StatelessWidget {
             ),
             child: const Text('View Favorites'),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           // Favorite users
           const Text(
             'Favorite Users',
@@ -119,6 +119,8 @@ class ProfilePage extends StatelessWidget {
             ),
             child: const Text('Add Post'),
           ),
+          const SizedBox(height: 20),
+          //Post button
           ElevatedButton(
             onPressed: () {
               Navigator.push(
