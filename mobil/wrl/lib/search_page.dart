@@ -50,70 +50,41 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _buildBody() {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  onChanged: (query) {
-                    setState(() {
-                      searchQuery = query;
-                      // Filter the search results based on the new query
-                      // ...
-                    });
-                  },
-                  decoration: const InputDecoration(
-                    hintText: 'Search...',
-                    border: InputBorder.none,
-                  ),
-                ),
-              ),
-              IconButton(
-                icon: const Icon(Icons.search),
-                onPressed: () {
-                  showSearch(
-                    context: context,
-                    delegate: CustomSearchDelegate(
-                      searchQuery: searchQuery,
-                      searchResults: searchResults,
-                      onQueryChanged: (query) {
-                        setState(() {
-                          searchQuery = query;
-                          searchResults = [];
-                          // Filter the search results based on the new query
-                          // ...
-                        });
-                      },
-                      onItemSelected: (result) {
-                        setState(() {
-                          searchResults.add(result);
-                        });
-                      },
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
-        Expanded(
-          child: ListView.builder(
-            itemCount: searchResults.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(searchResults[index]),
-              );
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          // Search bar
+          TextField(
+            onChanged: (query) {
+              setState(() {
+                searchQuery = query;
+                // Filter the search results based on the new query
+                // ...
+              });
             },
+            decoration: InputDecoration(
+              hintText: 'Search...',
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
           ),
-        ),
-      ],
+          const SizedBox(height: 20),
+          // Search results
+          Expanded(
+            child: ListView.builder(
+              itemCount: searchResults.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(searchResults[index]),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -144,12 +115,14 @@ class CustomSearchDelegate extends SearchDelegate<String> {
     ];
   }
 
-// Footer
-
   @override
   Widget? buildLeading(BuildContext context) {
-    // TODO: implement buildLeading
-    throw UnimplementedError();
+    return IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, '');
+      },
+    );
   }
 
   @override

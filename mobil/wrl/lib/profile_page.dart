@@ -21,149 +21,155 @@ class ProfilePage extends StatelessWidget {
       bottomNavigationBar: _buildFooter(context),
     );
   }
-}
 
-/*Widget _buildHeader() {
-  return AppBar(
-    title: const Text('WriteReadLearn Profile Page'),
-  );
-}*/
-
-// Body
-Widget _buildBody(BuildContext context) {
-  return SingleChildScrollView(
-    child: Column(
-      children: [
-        // Profile picture
-        const CircleAvatar(
-          radius: 50,
-          backgroundImage: NetworkImage(
-            'https://example.com/profile_picture.jpg',
+  Widget _buildBody(BuildContext context) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Profile picture
+          const CircleAvatar(
+            radius: 50,
+            backgroundImage: NetworkImage(
+              'https://example.com/profile_picture.jpg',
+            ),
           ),
-        ),
-        const IconButton(
-            onPressed: favorite, icon: Icon(Icons.favorite_border)),
-        const SizedBox(height: 20),
-        // Name
-        const Text(
-          'John Doe',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 20),
-        // Edit profile button
-        ElevatedButton(
-          onPressed: () {
-            // Navigate to edit profile page
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const EditProfilePage(
-                  initialName: 'John Doe',
-                  initialImageUrl: 'https://example.com/profile_picture.jpg',
+          const SizedBox(height: 20),
+          // Name
+          IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_border)),
+          const Text(
+            'John Doe',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 20),
+          // Edit profile button
+          ElevatedButton(
+            onPressed: () {
+              // Navigate to edit profile page
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const EditProfilePage(
+                    initialName: 'John Doe',
+                    initialImageUrl: 'https://example.com/profile_picture.jpg',
+                  ),
                 ),
-              ),
-            );
-          },
-          child: const Text('Edit Profile'),
-        ),
-        const SizedBox(height: 20),
-        // Favorite posts
-        const Text(
-          'Favorite Posts',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 10),
-        ElevatedButton(
-          onPressed: () {
-            // Navigate to favorite posts page
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const FavoritePostsPage()),
-            );
-          },
-          child: const Text('View Favorites'),
-        ),
-        const SizedBox(height: 20),
-        // Favorite users
-        const Text(
-          'Favorite Users',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 10),
-        ElevatedButton(
-          onPressed: () {
-            // Navigate to favorite users page
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const FavoriteUsersPage()),
-            );
-          },
-          child: const Text('View Favorites'),
-        ),
-        const SizedBox(height: 20),
-        //Add post button
-        ElevatedButton(
-          onPressed: () {
-            // Navigate to create blog post page
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const AddPostsPage()),
-            );
-          },
-          child: const Text('Add Post'),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const PostsPage()),
-            );
-          },
-          child: const Text('Posts'),
-        )
-      ],
-    ),
-  );
-}
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            ),
+            child: const Text('Edit Profile'),
+          ),
+          const SizedBox(height: 20),
+          // Favorite posts
+          const Text(
+            'Favorite Posts',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          ElevatedButton(
+            onPressed: () {
+              // Navigate to favorite posts page
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const FavoritePostsPage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            ),
+            child: const Text('View Favorites'),
+          ),
+          const SizedBox(height: 20),
+          // Favorite users
+          const Text(
+            'Favorite Users',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          ElevatedButton(
+            onPressed: () {
+              // Navigate to favorite users page
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const FavoriteUsersPage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            ),
+            child: const Text('View Favorites'),
+          ),
+          const SizedBox(height: 20),
+          //Add post button
+          ElevatedButton(
+            onPressed: () {
+              // Navigate to create blog post page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddPostsPage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            ),
+            child: const Text('Add Post'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const PostsPage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            ),
+            child: const Text('Posts'),
+          ),
+        ],
+      ),
+    );
+  }
 
-favorite() {}
-
-// Footer
-Widget _buildFooter(BuildContext context) {
-  return BottomAppBar(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        IconButton(
-          icon: const Icon(Icons.home),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const BlogMainPage()),
-            );
-          },
-        ),
-        IconButton(
-          icon: const Icon(Icons.search),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SearchPage()),
-            );
-          },
-        ),
-        IconButton(
-          icon: const Icon(Icons.person),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()),
-            );
-          },
-        ),
-      ],
-    ),
-  );
+  Widget _buildFooter(BuildContext context) {
+    return BottomAppBar(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          IconButton(
+            icon: const Icon(Icons.home),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const BlogMainPage()),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchPage()),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.person),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProfilePage()),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }

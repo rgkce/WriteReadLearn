@@ -17,19 +17,13 @@ class BlogMainPage extends StatelessWidget {
     );
   }
 
-  // Header
-  /*Widget _buildHeader() {
-    return AppBar(
-      title: const Text('WriteReadLearn Main Page'),
-    );
-  }*/
-
   // Body
   Widget _buildBody() {
     return ListView.builder(
       itemCount: 10,
       itemBuilder: (context, index) {
         return Card(
+          margin: const EdgeInsets.all(16.0),
           child: ListTile(
             title: Text('Blog Post $index'),
             subtitle: const Text('This is a sample blog post'),
@@ -48,11 +42,13 @@ class BlogMainPage extends StatelessWidget {
   // Footer
   Widget _buildFooter(BuildContext context) {
     return BottomAppBar(
+      color: Colors.white,
+      elevation: 8,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
-            icon: const Icon(Icons.home),
+            icon: const Icon(Icons.home, color: Colors.blue),
             onPressed: () {
               Navigator.push(
                 context,
@@ -61,7 +57,7 @@ class BlogMainPage extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.search),
+            icon: const Icon(Icons.search, color: Colors.grey),
             onPressed: () {
               Navigator.push(
                 context,
@@ -70,7 +66,7 @@ class BlogMainPage extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.person),
+            icon: const Icon(Icons.person, color: Colors.blue),
             onPressed: () {
               Navigator.push(
                 context,

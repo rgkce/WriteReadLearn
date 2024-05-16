@@ -45,6 +45,8 @@ class _FavoriteUsersPageState extends State<FavoriteUsersPage> {
                 autoPlay: true,
                 enlargeCenterPage: true,
                 enableInfiniteScroll: false,
+                viewportFraction: 0.8,
+                aspectRatio: 16 / 9,
               ),
               items: _favoriteUsers.map((user) {
                 return Builder(
@@ -52,10 +54,38 @@ class _FavoriteUsersPageState extends State<FavoriteUsersPage> {
                     return Container(
                       width: MediaQuery.of(context).size.width,
                       margin: const EdgeInsets.symmetric(horizontal: 5),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: const Offset(0, 3),
+                          ),
+                        ],
+                      ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(user.name),
-                          Text(user.email),
+                          const SizedBox(height: 16.0),
+                          Text(
+                            user.name,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 8.0),
+                          Text(
+                            user.email,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(fontSize: 18),
+                          ),
+                          const SizedBox(height: 16.0),
                         ],
                       ),
                     );

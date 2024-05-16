@@ -26,9 +26,13 @@ class _SignInState extends State<SignInPage> {
         child: Form(
           key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(
+                  labelText: 'Email',
+                  prefixIcon: Icon(Icons.email),
+                ),
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter an email';
@@ -37,8 +41,13 @@ class _SignInState extends State<SignInPage> {
                 },
                 onSaved: (value) => _email = value!,
               ),
+              const SizedBox(height: 20),
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(
+                  labelText: 'Password',
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: Icon(Icons.visibility),
+                ),
                 obscureText: true,
                 validator: (value) {
                   if (value!.length < 8) {

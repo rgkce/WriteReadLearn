@@ -45,6 +45,8 @@ class _FavoritePostsPageState extends State<FavoritePostsPage> {
                 autoPlay: true,
                 enlargeCenterPage: true,
                 enableInfiniteScroll: false,
+                viewportFraction: 0.8,
+                aspectRatio: 16 / 9,
               ),
               items: _favoritePosts.map((post) {
                 return Builder(
@@ -52,10 +54,41 @@ class _FavoritePostsPageState extends State<FavoritePostsPage> {
                     return Container(
                       width: MediaQuery.of(context).size.width,
                       margin: const EdgeInsets.symmetric(horizontal: 5),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: const Offset(0, 3),
+                          ),
+                        ],
+                      ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Text(post.title),
-                          Text(post.content),
+                          const SizedBox(height: 16.0),
+                          Text(
+                            post.title,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 16.0),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text(
+                              post.content,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(fontSize: 18),
+                            ),
+                          ),
+                          const SizedBox(height: 16.0),
                         ],
                       ),
                     );

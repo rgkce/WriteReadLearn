@@ -27,6 +27,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
   void initState() {
     super.initState();
     _imageUrl = widget.initialImageUrl;
+    defaultName.text = widget.initialName;
   }
 
   @override
@@ -35,58 +36,68 @@ class _EditProfilePageState extends State<EditProfilePage> {
       appBar: AppBar(
         title: const Text('Edit Profile'),
       ),
-      body: Column(
-        children: [
-          // Profile picture
-          CircleAvatar(
-            radius: 50,
-            backgroundImage: NetworkImage(_imageUrl),
-          ),
-          // Name
-          TextField(
-            controller: defaultName,
-            onChanged: (value) {
-              setState(() {});
-            },
-            decoration: const InputDecoration(
-              labelText: 'Name',
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Profile picture
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: NetworkImage(_imageUrl),
             ),
-          ),
-          TextField(
-            controller: defaultPassword,
-            onChanged: (value) {
-              setState(() {});
-            },
-            decoration: const InputDecoration(
-              labelText: 'Password',
+            const SizedBox(height: 16.0),
+            // Name
+            TextField(
+              controller: defaultName,
+              onChanged: (value) {
+                setState(() {});
+              },
+              decoration: const InputDecoration(
+                labelText: 'Name',
+              ),
             ),
-          ),
-          // Image URL
-          TextField(
-            controller: defaultImage,
-            onChanged: (value) {
-              setState(() {
-                _imageUrl = value;
-              });
-            },
-            decoration: const InputDecoration(
-              labelText: 'Image URL',
+            const SizedBox(height: 16.0),
+            // Password
+            TextField(
+              controller: defaultPassword,
+              onChanged: (value) {
+                setState(() {});
+              },
+              decoration: const InputDecoration(
+                labelText: 'Password',
+              ),
+              obscureText: true,
             ),
-          ),
-          // Save button
-          ElevatedButton(
-            onPressed: () {
-              // Save changes and navigate back
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ProfilePage(),
-                ),
-              );
-            },
-            child: const Text('Save'),
-          ),
-        ],
+            const SizedBox(height: 16.0),
+            // Image URL
+            TextField(
+              controller: defaultImage,
+              onChanged: (value) {
+                setState(() {
+                  _imageUrl = value;
+                });
+              },
+              decoration: const InputDecoration(
+                labelText: 'Image URL',
+              ),
+            ),
+            const SizedBox(height: 16.0),
+            // Save button
+            ElevatedButton(
+              onPressed: () {
+                // Save changes and navigate back
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProfilePage(),
+                  ),
+                );
+              },
+              child: const Text('Save'),
+            ),
+          ],
+        ),
       ),
     );
   }

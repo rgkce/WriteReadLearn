@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class PostsPage extends StatefulWidget {
@@ -16,35 +15,49 @@ class _PostsPageState extends State<PostsPage> {
     Post(title: 'Post 4', content: 'This is post 4'),
     Post(title: 'Post 5', content: 'This is post 5'),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Posts'),
       ),
-      body: CarouselSlider(
-        options: CarouselOptions(
-          height: 200,
-          autoPlay: true,
-          enlargeCenterPage: true,
-          enableInfiniteScroll: false,
-        ),
-        items: _posts.map((post) {
-          return Builder(
-            builder: (BuildContext context) {
-              return Container(
-                width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.symmetric(horizontal: 5),
+      body: ListView.builder(
+        itemCount: _posts.length,
+        itemBuilder: (BuildContext context, int index) {
+          final Post post = _posts[index];
+          return Card(
+            margin: const EdgeInsets.all(8.0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: InkWell(
+              onTap: () {
+                // Handle tap event
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text(post.title),
-                    Text(post.content),
+                    Text(
+                      post.title,
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8.0),
+                    Text(
+                      post.content,
+                      style: const TextStyle(fontSize: 18),
+                    ),
                   ],
                 ),
-              );
-            },
+              ),
+            ),
           );
-        }).toList(),
+        },
       ),
     );
   }

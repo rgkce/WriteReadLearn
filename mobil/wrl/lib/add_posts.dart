@@ -12,42 +12,42 @@ class AddPostsPage extends StatefulWidget {
 class _AddPostsPageState extends State<AddPostsPage> {
   final _titleController = TextEditingController();
   final _contentController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add Post'),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              TextField(
-                controller: _titleController,
-                decoration: const InputDecoration(
-                  labelText: 'Title',
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextField(
+              controller: _titleController,
+              decoration: const InputDecoration(
+                labelText: 'Title',
               ),
-              const SizedBox(height: 16.0),
-              TextField(
-                controller: _contentController,
-                decoration: const InputDecoration(
-                  labelText: 'Content',
-                ),
+            ),
+            const SizedBox(height: 16.0),
+            TextField(
+              controller: _contentController,
+              decoration: const InputDecoration(
+                labelText: 'Content',
               ),
-              const SizedBox(height: 16.0),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const PostsPage()),
-                  );
-                },
-                child: const Text('Add Post'),
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const PostsPage()),
+                );
+              },
+              child: const Text('Add Post'),
+            ),
+          ],
         ),
       ),
     );
