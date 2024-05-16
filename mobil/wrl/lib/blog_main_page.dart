@@ -33,6 +33,12 @@ class BlogMainPage extends StatelessWidget {
           child: ListTile(
             title: Text('Blog Post $index'),
             subtitle: const Text('This is a sample blog post'),
+            trailing: IconButton(
+              icon: const Icon(Icons.favorite_border),
+              onPressed: () {
+                // Handle favorite action
+              },
+            ),
           ),
         );
       },

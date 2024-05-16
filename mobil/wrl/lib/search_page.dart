@@ -1,78 +1,166 @@
 import 'package:flutter/material.dart';
 
-import 'blog_main_page.dart';
-import 'profile_page.dart';
-
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _SearchPageState createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  String searchQuery = '';
+  List<String> searchResults = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('WRL Search Page'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              showSearch(
+                context: context,
+                delegate: CustomSearchDelegate(
+                  searchQuery: searchQuery,
+                  searchResults: searchResults,
+                  onQueryChanged: (query) {
+                    setState(() {
+                      searchQuery = query;
+                      searchResults = [];
+                      // Filter the search results based on the new query
+                      // ...
+                    });
+                  },
+                  onItemSelected: (result) {
+                    setState(() {
+                      searchResults.add(result);
+                    });
+                  },
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: _buildBody(),
-      bottomNavigationBar: _buildFooter(context),
+    );
+  }
+
+  Widget _buildBody() {
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  onChanged: (query) {
+                    setState(() {
+                      searchQuery = query;
+                      // Filter the search results based on the new query
+                      // ...
+                    });
+                  },
+                  decoration: const InputDecoration(
+                    hintText: 'Search...',
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.search),
+                onPressed: () {
+                  showSearch(
+                    context: context,
+                    delegate: CustomSearchDelegate(
+                      searchQuery: searchQuery,
+                      searchResults: searchResults,
+                      onQueryChanged: (query) {
+                        setState(() {
+                          searchQuery = query;
+                          searchResults = [];
+                          // Filter the search results based on the new query
+                          // ...
+                        });
+                      },
+                      onItemSelected: (result) {
+                        setState(() {
+                          searchResults.add(result);
+                        });
+                      },
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: searchResults.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(searchResults[index]),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }
 
-/*Widget _buildHeader() {
-  return AppBar(
-    title: const Text('WriteReadLearn Search Page'),
-  );
-}*/
+class CustomSearchDelegate extends SearchDelegate<String> {
+  final String searchQuery;
+  final List<String> searchResults;
+  final ValueChanged<String> onQueryChanged;
+  final ValueChanged<String> onItemSelected;
 
-// Body
-Widget _buildBody() {
-  return ListView.builder(
-    itemCount: 10,
-    itemBuilder: (context, index) {
-      return Card(
-        child: ListTile(
-          title: Text('Blog Post $index'),
-          subtitle: const Text('This is a sample blog post'),
-        ),
-      );
-    },
-  );
-}
+  CustomSearchDelegate({
+    required this.searchQuery,
+    required this.searchResults,
+    required this.onQueryChanged,
+    required this.onItemSelected,
+  });
+
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+          onQueryChanged('');
+        },
+      ),
+    ];
+  }
 
 // Footer
-Widget _buildFooter(BuildContext context) {
-  return BottomAppBar(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        IconButton(
-          icon: const Icon(Icons.home),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const BlogMainPage()),
-            );
-          },
-        ),
-        IconButton(
-          icon: const Icon(Icons.search),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SearchPage()),
-            );
-          },
-        ),
-        IconButton(
-          icon: const Icon(Icons.person),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()),
-            );
-          },
-        ),
-      ],
-    ),
-  );
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    // TODO: implement buildLeading
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // TODO: implement buildSuggestions
+    throw UnimplementedError();
+  }
 }

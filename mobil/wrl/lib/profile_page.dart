@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:wrl/posts.dart';
 
 import 'add_posts.dart';
 import 'blog_main_page.dart';
+import 'edit_profile.dart';
 import 'favorite_posts_page.dart';
 import 'favorite_users_page.dart';
 import 'search_page.dart';
@@ -39,6 +41,8 @@ Widget _buildBody(BuildContext context) {
             'https://example.com/profile_picture.jpg',
           ),
         ),
+        const IconButton(
+            onPressed: favorite, icon: Icon(Icons.favorite_border)),
         const SizedBox(height: 20),
         // Name
         const Text(
@@ -50,6 +54,15 @@ Widget _buildBody(BuildContext context) {
         ElevatedButton(
           onPressed: () {
             // Navigate to edit profile page
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const EditProfilePage(
+                  initialName: 'John Doe',
+                  initialImageUrl: 'https://example.com/profile_picture.jpg',
+                ),
+              ),
+            );
           },
           child: const Text('Edit Profile'),
         ),
@@ -101,10 +114,21 @@ Widget _buildBody(BuildContext context) {
           },
           child: const Text('Add Post'),
         ),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const PostsPage()),
+            );
+          },
+          child: const Text('Posts'),
+        )
       ],
     ),
   );
 }
+
+favorite() {}
 
 // Footer
 Widget _buildFooter(BuildContext context) {
