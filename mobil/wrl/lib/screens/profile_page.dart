@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wrl/posts.dart';
+import 'package:wrl/screens/posts.dart';
 
 import 'add_posts.dart';
 import 'blog_main_page.dart';

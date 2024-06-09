@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'blog_main_page.dart';
-import 'profile_page.dart';
-import 'search_page.dart';
-import 'signin.dart';
+import 'screens/blog_main_page.dart';
+import 'screens/profile_page.dart';
+import 'screens/search_page.dart';
+import 'screens/signin.dart';
 
 void main() {
   runApp(const MyApp());

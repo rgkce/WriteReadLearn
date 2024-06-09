@@ -73,11 +73,16 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const BlogMainPage()),
+                      (Route<dynamic> route) => false,
+                    );
                   }
-                  Navigator.pushReplacementNamed(context, '/blog');
                 },
                 child: const Text('Sign Up'),
               ),

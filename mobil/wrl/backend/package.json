@@ -1,0 +1,12 @@
+{
+  "name": "writereadlearn-1",
+  "version": "1.0.0",
+  "description": "**Proje Tanimi:** WriteReadLearn isimli uygulamamiz, üye olan kişilerin çeşitli konularda makale formatinda yazilar yayinlamasina ve diğer kişilerin yayinladiği yazilarini okumasini sağlar. Çeşitli konu yelpazesi ile kişilerin konular hakkinda bilgi edinebilmesi kolaylaşir.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
