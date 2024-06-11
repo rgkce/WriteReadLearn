@@ -1,6 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import 'blog_main_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -12,8 +12,7 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
-  // ignore: unused_field
-  late String _name, _email, _password;
+  late String _username, _email, _password;
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +29,16 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               TextFormField(
                 decoration: const InputDecoration(
-                  labelText: 'Name',
+                  labelText: 'Username',
                   prefixIcon: Icon(Icons.person),
                 ),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Please enter a name';
+                    return 'Please enter a username';
                   }
                   return null;
                 },
-                onSaved: (value) => _name = value!,
+                onSaved: (value) => _username = value!,
               ),
               const SizedBox(height: 20),
               TextFormField(
@@ -76,24 +75,33 @@ class _SignUpPageState extends State<SignUpPage> {
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const BlogMainPage()),
-                      (Route<dynamic> route) => false,
+                    // Create a new user with Firebase Authentication
+                    UserCredential userCredential = await FirebaseAuth.instance
+                        .createUserWithEmailAndPassword(
+                      email: _email,
+                      password: _password,
                     );
+                    // Get the current user
+                    User? user = userCredential.user;
+                    // Create a new user document in Firestore
+                    await FirebaseFirestore.instance
+                        .collection('Users')
+                        .doc(user!.uid)
+                        .set({
+                      'username': _username,
+                      'email': _email,
+                      'password': _password
+                    });
                   }
+                  // ignore: use_build_context_synchronously
+                  Navigator.pushReplacementNamed(context, '/blog');
                 },
                 child: const Text('Sign Up'),
               ),
               const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const BlogMainPage()),
-                  );
+                  Navigator.pushReplacementNamed(context, '/');
                 },
                 child: const Text('Already have an account? Sign In'),
               ),
