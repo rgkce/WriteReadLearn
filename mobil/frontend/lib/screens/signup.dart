@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -12,6 +10,7 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
+  // ignore: unused_field
   late String _username, _email, _password;
 
   @override
@@ -72,28 +71,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.save();
-                    // Create a new user with Firebase Authentication
-                    UserCredential userCredential = await FirebaseAuth.instance
-                        .createUserWithEmailAndPassword(
-                      email: _email,
-                      password: _password,
-                    );
-                    // Get the current user
-                    User? user = userCredential.user;
-                    // Create a new user document in Firestore
-                    await FirebaseFirestore.instance
-                        .collection('Users')
-                        .doc(user!.uid)
-                        .set({
-                      'username': _username,
-                      'email': _email,
-                      'password': _password
-                    });
-                  }
-                  // ignore: use_build_context_synchronously
+                onPressed: () {
                   Navigator.pushReplacementNamed(context, '/blog');
                 },
                 child: const Text('Sign Up'),
