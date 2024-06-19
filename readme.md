@@ -17,7 +17,7 @@
 3. [Durum Diyagramı](UseCase.png)
 4. [Durum Senaryoları](Senaryolar.md)
 5. [Veritabanı Diyagramı](VeritabanıDiyagramı.png)
-6. Front-End
+6. [Front-End](Frontend.md)
 7. Back-end
-8. Test
-9. Geliştirici ve Kullanıcı Dokümantasyonları
+8. [Test](Test.md)
+9. [Geliştirici ve Kullanıcı Dokümantasyonları](Dokümantasyonlar.md)
