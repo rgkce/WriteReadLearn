@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wrl/screens/blog_main_page.dart';
 import 'package:wrl/screens/signup.dart';
 
 class SignInPage extends StatefulWidget {
@@ -62,7 +63,13 @@ class _SignInState extends State<SignInPage> {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                   }
-                  Navigator.pushReplacementNamed(context, '/blog');
+                  (settings) {
+                    if (settings.name == '/blog') {
+                      return MaterialPageRoute(
+                          builder: (context) => const BlogMainPage());
+                    }
+                    return null;
+                  };
                 },
                 child: const Text('Sign In'),
               ),

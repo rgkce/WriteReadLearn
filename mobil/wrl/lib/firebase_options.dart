@@ -41,48 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCdfWExvfsIMcgws3xa42kxAcdWcmmAfvA',
-    appId: '1:806856531371:web:649fb86dea7f9a0ea986ee',
-    messagingSenderId: '806856531371',
-    projectId: 'writereadlearn-2',
-    authDomain: 'writereadlearn-2.firebaseapp.com',
-    storageBucket: 'writereadlearn-2.appspot.com',
-    measurementId: 'G-H5C9GVYF1J',
+    apiKey: 'AIzaSyAN6IxYLiWMsReOMtJs6lL31waxZZPK3RA',
+    appId: '1:593772239726:web:a08dc5de63e492aa10bf7f',
+    messagingSenderId: '593772239726',
+    projectId: 'writereadlearn-3',
+    authDomain: 'writereadlearn-3.firebaseapp.com',
+    storageBucket: 'writereadlearn-3.appspot.com',
+    measurementId: 'G-4PHV4JNFD1',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBqzE2igeBHU_Diyz77DHbFHVU09r2Obx4',
-    appId: '1:806856531371:android:0707d3133051eb0ba986ee',
-    messagingSenderId: '806856531371',
-    projectId: 'writereadlearn-2',
-    storageBucket: 'writereadlearn-2.appspot.com',
+    apiKey: 'AIzaSyAw7D_qfK0UrCEDiyuhbPyQPXmR0siaQwk',
+    appId: '1:593772239726:android:dc2e1d028d06030e10bf7f',
+    messagingSenderId: '593772239726',
+    projectId: 'writereadlearn-3',
+    storageBucket: 'writereadlearn-3.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCuLz8iuRGhUpbd7X89u98jnCTaRVQF0r4',
-    appId: '1:806856531371:ios:e409049f4e6d2042a986ee',
-    messagingSenderId: '806856531371',
-    projectId: 'writereadlearn-2',
-    storageBucket: 'writereadlearn-2.appspot.com',
+    apiKey: 'AIzaSyDyUooqlNHmEuZPa9TJ5RKHuxVmOGrTbM4',
+    appId: '1:593772239726:ios:ecd221a1e7a6b1aa10bf7f',
+    messagingSenderId: '593772239726',
+    projectId: 'writereadlearn-3',
+    storageBucket: 'writereadlearn-3.appspot.com',
     iosBundleId: 'com.example.wrl',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCuLz8iuRGhUpbd7X89u98jnCTaRVQF0r4',
-    appId: '1:806856531371:ios:e409049f4e6d2042a986ee',
-    messagingSenderId: '806856531371',
-    projectId: 'writereadlearn-2',
-    storageBucket: 'writereadlearn-2.appspot.com',
+    apiKey: 'AIzaSyDyUooqlNHmEuZPa9TJ5RKHuxVmOGrTbM4',
+    appId: '1:593772239726:ios:ecd221a1e7a6b1aa10bf7f',
+    messagingSenderId: '593772239726',
+    projectId: 'writereadlearn-3',
+    storageBucket: 'writereadlearn-3.appspot.com',
     iosBundleId: 'com.example.wrl',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCdfWExvfsIMcgws3xa42kxAcdWcmmAfvA',
-    appId: '1:806856531371:web:62c54e26bb095132a986ee',
-    messagingSenderId: '806856531371',
-    projectId: 'writereadlearn-2',
-    authDomain: 'writereadlearn-2.firebaseapp.com',
-    storageBucket: 'writereadlearn-2.appspot.com',
-    measurementId: 'G-KT3LRVQCTS',
+    apiKey: 'AIzaSyAN6IxYLiWMsReOMtJs6lL31waxZZPK3RA',
+    appId: '1:593772239726:web:5fcf686f729a954610bf7f',
+    messagingSenderId: '593772239726',
+    projectId: 'writereadlearn-3',
+    authDomain: 'writereadlearn-3.firebaseapp.com',
+    storageBucket: 'writereadlearn-3.appspot.com',
+    measurementId: 'G-4Z720NB8ER',
   );
+
 }

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "806856531371",
-    "project_id": "writereadlearn-2",
-    "storage_bucket": "writereadlearn-2.appspot.com"
+    "project_number": "593772239726",
+    "project_id": "writereadlearn-3",
+    "storage_bucket": "writereadlearn-3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:806856531371:android:0707d3133051eb0ba986ee",
+        "mobilesdk_app_id": "1:593772239726:android:dc2e1d028d06030e10bf7f",
         "android_client_info": {
           "package_name": "com.example.wrl"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBqzE2igeBHU_Diyz77DHbFHVU09r2Obx4"
+          "current_key": "AIzaSyAw7D_qfK0UrCEDiyuhbPyQPXmR0siaQwk"
         }
       ],
       "services": {
