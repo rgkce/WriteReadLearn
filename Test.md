@@ -1,1 +1,1 @@
-1.[Rümeysa tarafından Unit test yazılan sayfalar](mobil\frontend\test): Edit Profile Page, Posts Page, Profile Page, Sign in page, Sign Up Page
+1.[Rümeysa tarafından Unit test yazılan sayfalar](mobil\frontend\test): Posts Page, Sign in page, Sign Up Page
